@@ -3,5 +3,5 @@ services:
     name: evs-voting-system
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
+    startCommand: "gunicorn run:app"
     plan: free
