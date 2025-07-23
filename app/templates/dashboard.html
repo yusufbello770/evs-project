@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Available Elections</h3>
+<ul class="list-group">
+{% for election in elections %}
+    <li class="list-group-item d-flex justify-content-between">
+        {{ election.title }}
+        <div>
+            <a href="{{ url_for('main.vote', election_id=election.election_id) }}" class="btn btn-primary btn-sm">Vote</a>
+            <a href="{{ url_for('main.results', election_id=election.election_id) }}" class="btn btn-secondary btn-sm">Results</a>
+        </div>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
